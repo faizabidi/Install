@@ -1,0 +1,100 @@
+REF: https://www.codementor.io/devops/tutorial/getting-started-postgresql-server-mac-osx
+REF: https://www.tutorialspoint.com/postgresql/postgresql_operators.htm
+
+HOW TO INSTALL ON MAC
+
+1. brew install postgresql
+
+TO START IT IN BACKGROUND AND RESTART AT LOGIN
+
+2. brew services start postgresql
+
+TO START IT IN FOREGROUND
+
+3. pg_ctl -D /usr/local/var/postgres start
+
+TO CHECK VERSION
+
+4. postgres -V
+
+TO CONFIGURE, ENTER THE BELOW ON A COMMAND LINE
+
+5. postgres
+
+TO SEE WHAT USERS ARE INSTALLED
+
+6. \du
+
+HOW TO CREATE USERS
+
+6. CREATE ROLE test WITH LOGIN PASSWORD ‘123’;
+
+TO ALLOW ‘test’ USER TO CREATE OR MANAGE DATABASES
+
+7. ALTER ROLE test CREATEDB; 
+
+SOME OTHER COMMON COMMANLINE UTILITIES
+
+createuser: creates a user
+createdb: creates a database
+dropuser: deletes a user
+dropdb: deletes a database
+postgres: executes the SQL server itself
+pg_dump: dumps the contents of a single database to a file
+pg_dumpall: dumps all databases to a file
+
+CREATE A DATABASE
+
+8. CREATE DATABASE databasename;
+
+LOGIN AS A SPECIFIC USER
+
+9. psql postgres -U test
+
+GRANT PRIVILEGES
+
+10. GRANT ALL PRIVILEGES ON DATABASE some_database TO test;
+
+LIST ALL DATABASES
+
+11. \list
+
+CONNECT TO A DATABASE
+
+12. \connect database_name
+
+LIST THE TABLES IN THE DATABASE
+
+13. \dt
+
+DESCRIBE THE TABLE IN THE DATABASE
+
+14. \d table_name
+
+CREATE TABLE
+
+15. CREATE TABLE table_name(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+
+DROP TABLE
+
+16. DROP TABLE table_name;
+
+INSERT INTO TABLE
+
+17. INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)
+VALUES (value1, value2, value3,...valueN);
+
+SHOW TABLE CONTENTS
+
+18. SELECT * FROM table_name; 
+
+
+
+
+
